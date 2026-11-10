@@ -22,6 +22,7 @@ def handle_event(event):
     elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
         game_framework.change_mode(title_mode)
     elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
+        boy.clear_movement_input()
         game_framework.push_mode(pause_mode)
     elif event.type == SDL_KEYDOWN and event.key == SDLK_i:
         game_framework.push_mode(item_mode)
@@ -64,7 +65,7 @@ def finish():
 
 
 def pause():
-    boy.clear_movement_input()
+    pass
 
 
 def resume():
