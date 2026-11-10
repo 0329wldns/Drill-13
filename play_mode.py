@@ -64,7 +64,7 @@ def finish():
 
 
 def pause():
-    pass
+    boy.clear_movement_input()
 
 
 def resume():

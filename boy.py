@@ -56,6 +56,12 @@ class Boy:
     def set_ball_size(self, size):
         self.ball_size = size
 
+    def clear_movement_input(self):
+        self.pressed_keys.clear()
+        self.dir = 0
+        if self.state == 'RUN':
+            self.stop_run()
+
     def handle_event(self, event):
         if (event.type == SDL_KEYDOWN and
                 event.key == SDLK_SPACE and
