@@ -43,6 +43,8 @@ def render():
 
 
 def render_selection():
+    import play_mode
+
     selected = play_mode.boy.ball_size
     options = (
         (280, None, '0: NONE', selected is None),
@@ -71,5 +73,7 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_2:
             play_mode.select_ball('large')
             game_framework.pop_mode()
+        elif event.type == SDL_KEYDOWN and event.key == SDLK_i:
+            continue
         else:
             play_mode.handle_event(event)
