@@ -41,8 +41,12 @@ def update():
 
 def render():
     clear_canvas()
-    game_world.render()
+    render_scene()
     update_canvas()
+
+
+def render_scene():
+    game_world.render()
 
 
 def finish():
