@@ -29,6 +29,9 @@ def handle_event(event):
         boy.handle_event(event)
 
 
+def select_ball(size):
+    boy.set_ball_size(size)
+
 
 def init():
     global boy
