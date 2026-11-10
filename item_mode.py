@@ -38,7 +38,24 @@ def render():
     import play_mode
     clear_canvas()
     play_mode.render_scene()
+    render_selection()
     update_canvas()
+
+
+def render_selection():
+    selected = play_mode.boy.ball_size
+    options = (
+        (280, None, '0: NONE', selected is None),
+        (400, small_ball, '1: SMALL', selected == 'small'),
+        (520, large_ball, '2: LARGE', selected == 'large'),
+    )
+
+    for x, image, label, is_selected in options:
+        if image is not None:
+            image.draw(x, 330)
+        font.draw(x - 45, 270, label, (255, 255, 255))
+        if is_selected:
+            draw_rectangle(x - 50, 295, x + 50, 365)
 
 
 def handle_events():
